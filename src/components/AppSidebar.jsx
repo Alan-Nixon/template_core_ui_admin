@@ -48,17 +48,13 @@ export const logo = [
 ]
 
 
-import {
-  cilBell,
-  cilCalculator,
-  cilChartPie,
+import { 
   cilCursor,
   cilUser,
-  cilNotes,
   cilReportSlash,
-  cilPuzzle,
+  cilMoney,
   cilSpeedometer,
-  cilStar,
+  cibKoding
 } from '@coreui/icons';
 
 
@@ -79,13 +75,13 @@ const navigation = [
   {
     component: CNavItem,
     name: 'User Management',
-    to: '/theme',
+    to: '/userManagement',
     icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Report Management',
-    to: '/icons',
+    to: '/reportManagement',
     icon: <CIcon icon={cilReportSlash} customClassName="nav-icon" />,
   },
   {
@@ -94,43 +90,25 @@ const navigation = [
   },
   {
     component: CNavItem,
-    name: 'Base',
-    to: '/base',
-    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
-  },
-  {
-    component: CNavItem,
-    name: 'Buttons',
-    to: '/buttons',
+    name: 'Live Stream',
+    to: '/liveStream',
     icon: <CIcon icon={cilCursor} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Forms',
-    to: "/forms",
-    icon: <CIcon icon={cilNotes} customClassName="nav-icon" />,
-  },
-  {
-    component: CNavItem,
-    name: 'Charts',
-    to: '/charts',
-    icon: <CIcon icon={cilChartPie} customClassName="nav-icon" />,
-  },
+    name: 'Offer Management',
+    to: '/offerManagement',
+    icon: <CIcon icon={cilMoney} customClassName="nav-icon" />,
+  }, 
   {
     component: CNavTitle,
     name: 'Others',
-  }, 
-  {
-    component: CNavItem,
-    name: 'Notifications',
-    to: '/notifications',
-    icon: <CIcon icon={cilBell} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Widgets',
-    to: '/widgets',
-    icon: <CIcon icon={cilCalculator} customClassName="nav-icon" />,
+    name: 'Banner Management',
+    to: '/bannerManagement',
+    icon: <CIcon icon={cibKoding} customClassName="nav-icon" />,
   },
 ]
 
@@ -150,8 +128,7 @@ const AppSidebar = () => {
       visible={sidebarShow}
       onVisibleChange={(visible) => {
         dispatch({ type: 'set', sidebarShow: visible })
-      }}
-    >
+      }}>
       <CSidebarHeader className="border-bottom">
         <CSidebarBrand to="/">
           <CIcon customClassName="sidebar-brand-full" icon={logo} height={32} />

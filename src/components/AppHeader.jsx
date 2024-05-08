@@ -12,6 +12,7 @@ import {
   CHeaderToggler,
   CNavLink,
   CNavItem,
+  CAvatar,
   useColorModes,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
@@ -26,7 +27,6 @@ import {
 } from '@coreui/icons'
 
 import { AppBreadcrumb } from './index'
-import { AppHeaderDropdown } from './header/index'
 
 const AppHeader = () => {
   const headerRef = useRef()
@@ -47,8 +47,7 @@ const AppHeader = () => {
       <CContainer className="border-bottom px-4" fluid>
         <CHeaderToggler
           onClick={() => dispatch({ type: 'set', sidebarShow: !sidebarShow })}
-          style={{ marginInlineStart: '-14px' }}
-        >
+          style={{ marginInlineStart: '-14px' }}>
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
         <CHeaderNav className="d-none d-md-flex">
@@ -87,13 +86,9 @@ const AppHeader = () => {
           </li>
           <CDropdown variant="nav-item" placement="bottom-end">
             <CDropdownToggle caret={false}>
-              {colorMode === 'dark' ? (
-                <CIcon icon={cilMoon} size="lg" />
-              ) : colorMode === 'auto' ? (
-                <CIcon icon={cilContrast} size="lg" />
-              ) : (
-                <CIcon icon={cilSun} size="lg" />
-              )}
+              {colorMode === 'dark' ? (<CIcon icon={cilMoon} size="lg" />)
+                : colorMode === 'auto' ? (<CIcon icon={cilContrast} size="lg" />)
+                  : (<CIcon icon={cilSun} size="lg" />)}
             </CDropdownToggle>
             <CDropdownMenu>
               <CDropdownItem
@@ -128,7 +123,7 @@ const AppHeader = () => {
           <li className="nav-item py-1">
             <div className="vr h-100 mx-2 text-body text-opacity-75"></div>
           </li>
-          <AppHeaderDropdown />
+          <CAvatar src="https://res.cloudinary.com/dyh7c1wtm/image/upload/fl_preserve_transparency/v1711020081/YNOS427860_xnjsna.jpg?_s=public-apps" size="md" />
         </CHeaderNav>
       </CContainer>
       <CContainer className="px-4" fluid>
